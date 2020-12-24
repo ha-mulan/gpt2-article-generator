@@ -1,4 +1,4 @@
-from ham5312/fakenews:3.0
+FROM ham5312/fakenews:3.0
 
 RUN apt-get update && \
     apt-get install -y && \
