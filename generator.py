@@ -83,13 +83,14 @@ class Generator:
         samples = Gpt2Handler.get_instance().generate_as_tuple(title, initial_content, num_samples, num_words)
         samples_str = [sample[0] + '\n' + sample[1] for sample in samples]
 
-        if print_output:  # Print each article to the console is specified to
-            for sample in samples_str:
-                print(sample)
-        if output_file:  # Write each of the samples to their own file if a base filename is specified
-            self.write_samples_to_file(output_file, samples_str)
-
         return samples_str
+        # if print_output:  # Print each article to the console is specified to
+        #     for sample in samples_str:
+        #         print(sample)
+        # if output_file:  # Write each of the samples to their own file if a base filename is specified
+        #     self.write_samples_to_file(output_file, samples_str)
+        #
+        # return samples_str
 
     def write_samples_to_file(self, filename, samples):
         """Write the given samples to a file. If there is more than one, write each to its own file."""
