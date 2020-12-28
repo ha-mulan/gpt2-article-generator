@@ -16,7 +16,7 @@ RUN mv ham/checkpoint gpt2-article-generator/checkpoint
 WORKDIR /gpt2-article-generator/
 EXPOSE 80
 
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python3", "app.py"]
     
     
     
