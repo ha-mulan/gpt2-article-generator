@@ -13,7 +13,7 @@ RUN pip install flask && pip install waitress
 
 WORKDIR /gpt2-article-generator/
 EXPOSE 80
-COPY . . 
+#COPY . . 
 ENTRYPOINT ["python", "app.py"]
     
     
