@@ -15,7 +15,10 @@ FROM ham5312/fakenewsgpu:1.1
 #RUN mv ham/checkpoint gpt2-article-generator/checkpoint
 #RUN rm -rf gpt2-article-generator/models
 #RUN mv ham/models gpt2-article-generator
-#WORKDIR /gpt2-article-generator/
+#WORKDIR /gpt2-article-generator
+#RUN mkdir gpt2-article-generator
+COPY . .
+RUN mv gpt2-article-generator/app.py modelInfo/app.py
 WORKDIR /modelInfo/
 EXPOSE 80
 
