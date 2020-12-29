@@ -18,10 +18,10 @@ def homepage():
 
 
 @app.route('/api/<titled>/<contented>')
-def api(title,content):
+def api(titled,contented):
+    Generatored=Generator()
     try:
-        Generatored=Generator()
-        list_news=Generatored.generate(self,initial_content=contented,title=titled)
+        list_news=Generatored.generate(initial_content=contented,title=titled)
         listToStr = ' '.join(map(str,list_news))
         return listToStr
     except:
