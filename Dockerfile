@@ -14,7 +14,7 @@ RUN mkdir gpt2-article-generator
 COPY . /gpt2-article-generator
 RUN mv ham/checkpoint gpt2-article-generator/checkpoint
 RUN rm -rf gpt2-article-generator/models
-RUN mv ham/models gpt2-article-generator/
+RUN mv ham/models gpt2-article-generator
 WORKDIR /gpt2-article-generator/
 EXPOSE 80
 
