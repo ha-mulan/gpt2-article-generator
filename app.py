@@ -17,15 +17,16 @@ def homepage():
     return 'to generate article please add /api/title/content at the end of url'
 
 
-@app.route('/api/<titled>/<contented>')
-def api(titled,contented):
+@app.route('/api/')
+def api():
+    titled=request.args.get('title')
+    contented=request.args.get('content')
+
     Generatored=Generator()
-    try:
-        list_news=Generatored.generate(initial_content=contented,title=titled)
-        listToStr = ' '.join(map(str,list_news))
-        return listToStr
-    except:
-        return 'to generate article please add /api/title/content at the end of url'
+    # return titled+contented
+    list_news=Generatored.generate(initial_content=contented,title=titled)
+    listToStr = ' '.join(map(str,list_news))
+    return listToStr
     # return title+content
         # return check_output(f'python3 ArticleGenerator.py {keyword} -C {keyword} -p')
     # except:
