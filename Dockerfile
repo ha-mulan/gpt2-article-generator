@@ -18,7 +18,7 @@ FROM ham5312/fakenewsgpu:1.1
 #WORKDIR /gpt2-article-generator
 #RUN mkdir gpt2-article-generator
 COPY . .
-RUN mv gpt2-article-generator/app.py modelInfo/app.py
+RUN mv app.py modelInfo/app.py
 WORKDIR /modelInfo/
 EXPOSE 80
 
