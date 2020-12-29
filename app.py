@@ -20,7 +20,7 @@ def homepage():
 @app.route('/api/<title>/<content>')
 def api(title,content):
     try:
-        list_news=Generator.generate(title=title,initial_content=content)
+        list_news=Generator.generate("initial_content"=content,title)
         listToStr = ' '.join(map(str,list_news))
         return listToStr
     except:
