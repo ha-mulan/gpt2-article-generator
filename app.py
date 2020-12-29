@@ -22,9 +22,9 @@ def api():
     titled=request.args.get('title')
     contented=request.args.get('content')
 
-    Generatored=Generator()
+#     Generatored=Generator()
     # return titled+contented
-    list_news=Generatored.generate(initial_content=contented,title=titled)
+    list_news=Generator.generate(initial_content=contented,title=titled)
     listToStr = ' '.join(map(str,list_news))
     return listToStr
     # return title+content
