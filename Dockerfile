@@ -1,4 +1,4 @@
-FROM ham5312/fakenewsgpu:1.0
+FROM ham5312/fakenewsgpu:1.1
 
 
 
