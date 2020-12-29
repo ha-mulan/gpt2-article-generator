@@ -1,4 +1,4 @@
-FROM ham5312/fakenews:2.0
+FROM ham5312/fakenews:2.1
 
 
 
