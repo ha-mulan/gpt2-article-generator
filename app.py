@@ -50,14 +50,14 @@ def post():
     Generatored=Generator.get_instance()
     value1 = request.form['title']
     value2 = request.form['content']
-    list_news=Generatored.generate(initial_content=contented,title=titled)
+    list_news=Generatored.generate(initial_content=value2,title=value1)
     listToStr = ' '.join(map(str,list_news))
     return listToStr
 @app.route('/api/<title>/<content>')
 def api(title,content):
     try:
         Generatored=Generator.get_instance()
-        list_news=Generatored.generate(initial_content=contented,title=titled)
+        list_news=Generatored.generate(initial_content=content,title=title)
         listToStr = ' '.join(map(str,list_news))
         return listToStr
     except:
