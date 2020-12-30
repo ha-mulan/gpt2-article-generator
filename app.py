@@ -1,5 +1,5 @@
-# from generator import *
-# from ArticleGenerator import *
+from generator import *
+from ArticleGenerator import *
 # import os
 # from subprocess import check_output
 # from flask import Flask
