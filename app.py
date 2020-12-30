@@ -47,15 +47,17 @@ def test():
     return render_template('index.html')
 @app.route('/post', methods=['POST'])
 def post():
+    Generatored=Generator.get_instance()
     value1 = request.form['title']
     value2 = request.form['content']
-    list_news=Generator.generate(title=value1,content=value2)
+    list_news=Generatored.generate(title=value1,content=value2)
     listToStr = ' '.join(map(str,list_news))
     return listToStr
 @app.route('/api/<title>/<content>')
 def api(title,content):
     try:
-        list_news=Generator.generate(title=title,content=content)
+        Generatored=Generator.get_instance()
+        list_news=Generatored.generate(title=title,content=content)
         listToStr = ' '.join(map(str,list_news))
         return listToStr
     except:
