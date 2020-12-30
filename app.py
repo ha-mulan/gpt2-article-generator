@@ -53,15 +53,16 @@ def post():
     list_news=Generatored.generate(initial_content=value2,title=value1)
     listToStr = ' '.join(map(str,list_news))
     return listToStr
-@app.route('/api/<title>/<content>')
-def api(title,content):
-    try:
-        Generatored=Generator.get_instance()
-        list_news=Generatored.generate(initial_content=content,title=title)
-        listToStr = ' '.join(map(str,list_news))
-        return listToStr
-    except:
-        return 'to generate article please add /api/title/content at the end of url'
+@app.route('/api/')
+def api():
+    titled=request.args.get('title')
+    contented=request.args.get('content')
+    Generatored=Generator.get_instance()
+    list_news=Generatored.generate(initial_content=content,title=title)
+    listToStr = ' '.join(map(str,list_news))
+    return listToStr
+#     except:
+#         return 'to generate article please add /api/title/content at the end of url'
     # return title+content
         # return check_output(f'python3 ArticleGenerator.py {keyword} -C {keyword} -p')
     # except:
