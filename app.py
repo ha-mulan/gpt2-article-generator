@@ -58,7 +58,7 @@ def api():
     titled=request.args.get('title')
     contented=request.args.get('content')
     Generatored=Generator.get_instance()
-    list_news=Generatored.generate(initial_content=content,title=title)
+    list_news=Generatored.generate(initial_content=contented,title=titled)
     listToStr = ' '.join(map(str,list_news))
     return listToStr
 #     except:
