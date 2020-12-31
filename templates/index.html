@@ -42,15 +42,38 @@
 
                 <hr class="solid">
                 <h2>Make your own article </h2>
-                <form action="/post" method="post">
-                  <p>Please enter a title below</p>
-        <input type="text" name="title">
-        <p>Please enter initial content below</p>
-       <input type="text" name="content">
-       <p></p>
-       <input type="submit" value="RUN" >
-      </form>
-
+                <p>Please enter a title below</p>
+                <input id='title'>
+                <p>Please enter initial content below</p>
+                <input id='content'>
+                <p></p>
+                <button onclick='printName()'>RUN</button>
+                <p></p>
+                <script type="text/javascript">
+                 function printName()  {
+                   const title = document.getElementById('title').value;
+                   const content = document.getElementById('content').value;
+                   fetch('/api/?title='+title+'&content='+content).then(function(response){
+                     response.text().then(function(text){
+                       document.getElementById("result").innerText = text;
+                     })
+                   })
+                 }
+               </script>
+                <h2>result</h2>
+                <div id="result" style="width: 480; margin-left: auto; margin-right: auto;">
+        <div id="resultText"></div>
+        <table>
+            <tr>
+                <td id="left" style="width: 50%; height: 50%;">
+                    <image id="origin" style="width: 100%; height:auto;">
+                </td>
+                <td id="right" style="width: 30%; height: 30%; padding-left: 5%;">
+                    <div id="score" style="font-size: 30px; color: red;"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
             </div>
         </div>
     </body>
