@@ -33,7 +33,7 @@ def handle_requests_by_batch():
 
             for request in requests_batch:
                 if len(request["input"]) == 1:
-                    list_news=Generatored.generate(initial_content=request['input'][1],title=request['input'][0])
+                    list_news=Generatored.generate(initial_content=request['input'][0][1],title=request['input'][0][0])
                     listToStr = ' '.join(map(str,list_news))
                     batch_outputs.append(listToStr)
             for request, output in zip(requests_batch, batch_outputs):
