@@ -81,7 +81,7 @@ def health():
 
 @app.route('/')
 def main():
-    return "ok", 200
+    return render_template('index.html')
 
 if __name__ == "__main__":
     from waitress import serve
