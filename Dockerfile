@@ -9,7 +9,7 @@ RUN mv templates modelInfo/
 WORKDIR /modelInfo/
 EXPOSE 80
 
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python", "app2.py"]
     
     
     
