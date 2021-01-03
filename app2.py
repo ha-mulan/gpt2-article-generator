@@ -8,7 +8,7 @@ import threading
 import time
 from flask import Flask
 from flask import request
-from primeFactor import PrimeFactor
+
 app = Flask(__name__)
 
 requests_queue = Queue()
