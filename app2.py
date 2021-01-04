@@ -74,6 +74,14 @@ def generate():
 
     return req['output']
 
+@app.route('/queue-clear')
+def queue_debug():
+    try:
+        requests_queue.queue.clear()
+
+        return 'Clear', 200
+    except Exception:
+        return jsonify({'message': 'Queue clear error'}), 400
 
 @app.route('/healthz')
 def health():
